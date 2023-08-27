@@ -1,0 +1,91 @@
+:root {
+  --backgroundColor: #292929;
+  --seat-color: #444451;
+  --text-color: #777;
+  --reserved-color: #fff;
+  --selected-color: #f6eb6f;
+  --info-background: rgba(0, 0, 0, 0.2);
+
+  --transition: all 0.5s ease;
+
+  --box-shadow: 0 3px 8px rgba(255, 255, 255, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+body {
+  background-color: var(--backgroundColor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/*sinema perdesi*/
+.screen {
+  margin: 20px 0;
+  box-shadow: var(--box-shadow);
+  height: 200px;
+}
+.screen img {
+  width: 100%;
+  height: 200px;
+}
+.seat.reserved {
+  color: var(--reserved-color);
+}
+
+.seat.selected {
+  color: var(--selected-color);
+}
+.seatsRow {
+  display: flex;
+}
+
+.seat {
+  color: var(--seat-color);
+  font-size: 20px;
+  margin: 5px;
+  transition: var(--transition);
+}
+.seat:not(.reserved):hover {
+  cursor: pointer;
+  transform: scale(1.4);
+}
+
+/*Film seçim barı*/
+
+.movie-list {
+  margin: 20px 0;
+}
+.info {
+  background-color: var(--info-background);
+  display: flex;
+  padding: 5px 10px;
+  color: var(--text-color);
+  gap: 8px;
+}
+.info li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.infoText.open {
+  display: block;
+}
+.infoText {
+  color: var(--reserved-color);
+  margin: 7px 0;
+  display: none;
+}
+
+.infoText span {
+  color: var(--selected-color);
+}
